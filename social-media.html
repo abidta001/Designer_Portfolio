@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Social Media Gallery | ABID T A</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+    background:#09090b;
+}
+
+.social-card{
+    max-width:600px;
+    width:100%;
+    margin:auto;
+
+    background:#18181b;
+    border-radius:24px;
+    overflow:hidden;
+    transition:.4s ease;
+    cursor:pointer;
+}
+
+.social-card:hover{
+    transform:translateY(-8px);
+}
+
+.social-card img{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    display:block;
+}
+
+.profile-header{
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.avatar{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    overflow:hidden;
+    border:2px solid rgba(255,255,255,.1);
+    flex-shrink:0;
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.actions{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px;
+}
+
+.left-actions{
+    display:flex;
+    gap:18px;
+}
+
+.action-icon{
+    width:24px;
+    height:24px;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.action-icon:hover{
+    transform:scale(1.15);
+}
+
+.action-icon.liked{
+    fill:#ef4444;
+    stroke:#ef4444;
+}
+
+.caption{
+    padding:0 18px 20px;
+}
+
+.tag{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:999px;
+    background:#27272a;
+    font-size:.75rem;
+    margin-top:12px;
+    margin-right:8px;
+}
+
+.carousel-container{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+   
+}
+
+.carousel-track{
+    display:flex;
+    transition:transform .5s cubic-bezier(.22,.61,.36,1);
+}
+
+.carousel-track img{
+    min-width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    display:block;
+}
+
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    padding:18px;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#52525b;
+    transition:.3s;
+}
+
+.dot.active{
+    background:white;
+    width:24px;
+    border-radius:999px;
+}
+.carousel-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(0,0,0,.45);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    z-index:20;
+    backdrop-filter:blur(8px);
+    transition:.3s;
+}
+
+.carousel-btn:hover{
+    background:rgba(0,0,0,.7);
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.95);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90vh;
+}
+
+.close-btn{
+    position:absolute;
+    top:30px;
+    right:40px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
+
+body.dark{
+    background:#09090b;
+    color:white;
+}
+
+body.light{
+    background:white;
+    color:#18181b;
+}
+
+body.light .social-card,
+body.light .carousel-container{
+    background:white;
+    border:1px solid #e4e4e7;
+}
+
+body.light .tag{
+    background:#f4f4f5;
+}
+
+body.light .carousel-btn{
+    background:rgba(0,0,0,.08);
+    color:#18181b;
+}
+
+body.light .lightbox{
+    background:rgba(255,255,255,.95);
+}
+
+body.light .close-btn{
+    background:rgba(0,0,0,.08);
+    color:#18181b;
+}
+
+</style>
+</head>
+
+<body class="dark transition-colors duration-500">
+
+<button
+id="theme-toggle"
+class="fixed top-6 right-6 z-50 p-3 rounded-full bg-zinc-800 text-white">
+☀
+</button>
+
+<section class="py-20 text-center px-6">
+
+<h1 class="text-5xl font-bold mb-4">
+SOCIAL MEDIA DESIGN
+</h1>
+
+<p class="max-w-2xl mx-auto text-zinc-400">
+A curated collection of social media campaigns, promotional creatives, and carousel designs created for modern brands.
+</p>
+
+</section>
+
+<section class="max-w-2xl mx-auto px-4 pb-20">
+
+<div class="max-w-xl mx-auto flex flex-col gap-12">
+
+<div class="social-card" onclick="openLightbox('assets/Images/SocialMedia/post1.jpg')">
+
+<div class="profile-header">
+
+    <div class="flex items-center gap-3">
+
+        <div class="avatar">
+    <img src="assets/Images/profile.jpg" alt="Profile">
+</div>
+
+        <div>
+            <h4 class="font-semibold">AHAM DESIGN</h4>
+            <p class="text-sm text-zinc-500">@aham.design</p>
+        </div>
+
+    </div>
+
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+        <circle cx="5" cy="12" r="2"/>
+        <circle cx="12" cy="12" r="2"/>
+        <circle cx="19" cy="12" r="2"/>
+    </svg>
+
+</div>
+
+<img src="assets/Images/SocialMedia/poster1.jpg">
+
+<div class="actions">
+
+    <div class="left-actions">
+
+        <!-- Like -->
+        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 21s-7-4.35-9.5-8C.5 10.5 2 6 6 6c2.2 0 3.5 1.3 4 2.2C10.5 7.3 11.8 6 14 6c4 0 5.5 4.5 3.5 7-2.5 3.65-9.5 8-9.5 8z" stroke-width="2"/>
+        </svg>
+
+        <!-- Comment -->
+        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M21 12a8.5 8.5 0 01-8.5 8.5c-1.4 0-2.7-.3-3.8-.9L3 21l1.4-5.1A8.5 8.5 0 1121 12z" stroke-width="2"/>
+        </svg>
+
+        <!-- Share -->
+        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M22 2L11 13" stroke-width="2"/>
+            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke-width="2"/>
+        </svg>
+
+    </div>
+
+    <!-- Save -->
+    <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M6 3H18V21L12 17L6 21V3Z" stroke-width="2"/>
+    </svg>
+
+</div>
+
+<div class="caption">
+<p class="font-semibold mb-2">324 Likes</p>
+
+<p>
+Creative campaign design focused on brand awareness and audience engagement.
+</p>
+
+<div class="mt-4">
+<span class="tag">Branding</span>
+<span class="tag">Marketing</span>
+<span class="tag">Instagram</span>
+</div>
+</div>
+
+</div>
+
+<div class="social-card" onclick="openLightbox('assets/Images/SocialMedia/post2.jpg')">
+
+<div class="profile-header">
+
+    <div class="flex items-center gap-3">
+
+        <div class="avatar">
+    <img src="assets/Images/profile.jpg" alt="Profile">
+</div>
+
+        <div>
+            <h4 class="font-semibold">AHAM DESIGN</h4>
+            <p class="text-sm text-zinc-500">@aham.design</p>
+        </div>
+
+    </div>
+
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+        <circle cx="5" cy="12" r="2"/>
+        <circle cx="12" cy="12" r="2"/>
+        <circle cx="19" cy="12" r="2"/>
+    </svg>
+
+</div>
+
+<img src="assets/Images/SocialMedia/poster2.jpg">
+
+<div class="actions">
+
+    <div class="left-actions">
+
+        <!-- Like -->
+        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 21s-7-4.35-9.5-8C.5 10.5 2 6 6 6c2.2 0 3.5 1.3 4 2.2C10.5 7.3 11.8 6 14 6c4 0 5.5 4.5 3.5 7-2.5 3.65-9.5 8-9.5 8z" stroke-width="2"/>
+        </svg>
+
+        <!-- Comment -->
+        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M21 12a8.5 8.5 0 01-8.5 8.5c-1.4 0-2.7-.3-3.8-.9L3 21l1.4-5.1A8.5 8.5 0 1121 12z" stroke-width="2"/>
+        </svg>
+
+        <!-- Share -->
+        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M22 2L11 13" stroke-width="2"/>
+            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke-width="2"/>
+        </svg>
+
+    </div>
+
+    <!-- Save -->
+    <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M6 3H18V21L12 17L6 21V3Z" stroke-width="2"/>
+    </svg>
+
+</div>
+<div class="caption">
+<p class="font-semibold mb-2">412 Likes</p>
+
+<p>
+Product promotion designed for maximum visual impact and engagement.
+</p>
+
+<div class="mt-4">
+<span class="tag">Promotion</span>
+<span class="tag">Social Media</span>
+<span class="tag">Design</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<div class="social-card">
+
+    <div class="profile-header">
+
+        <div class="flex items-center gap-3">
+
+            <div class="avatar">
+                <img src="assets/Images/profile.jpg" alt="Profile">
+            </div>
+
+            <div>
+                <h4 class="font-semibold">AHAM DESIGN</h4>
+                <p class="text-sm text-zinc-500">@aham.design</p>
+            </div>
+
+        </div>
+
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="5" cy="12" r="2"/>
+            <circle cx="12" cy="12" r="2"/>
+            <circle cx="19" cy="12" r="2"/>
+        </svg>
+
+    </div>
+
+    <div class="relative">
+
+        <span id="slideCounter"
+        class="absolute top-4 right-4 z-10 px-3 py-1 rounded-full text-xs bg-black/60 text-white">
+            1/8
+        </span>
+
+        <div class="carousel-container">
+
+            <div class="carousel-track" id="carouselTrack">
+               
+
+                <img src="assets/Images/SocialMedia/ss_carousal/Carousal-01.jpg">
+                <img src="assets/Images/SocialMedia/ss_carousal/Carousal-02.jpg">
+                <img src="assets/Images/SocialMedia/ss_carousal/Carousal-03.jpg">
+                <img src="assets/Images/SocialMedia/ss_carousal/Carousal-04.jpg">
+                <img src="assets/Images/SocialMedia/ss_carousal/Carousal-05.jpg">
+                <img src="assets/Images/SocialMedia/ss_carousal/Carousal-06.jpg">
+                <img src="assets/Images/SocialMedia/ss_carousal/Carousal-07.jpg">
+                <img src="assets/Images/SocialMedia/ss_carousal/Carousal-08.jpg">
+
+            </div>
+              <button class="carousel-btn prev" onclick="prevSlide()">
+    ❮
+</button>
+
+<button class="carousel-btn next" onclick="nextSlide()">
+    ❯
+</button>
+
+        </div>
+
+    </div>
+
+    <div class="actions">
+
+        <div class="left-actions">
+
+            <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 21s-7-4.35-9.5-8C.5 10.5 2 6 6 6c2.2 0 3.5 1.3 4 2.2C10.5 7.3 11.8 6 14 6c4 0 5.5 4.5 3.5 7-2.5 3.65-9.5 8-9.5 8z" stroke-width="2"/>
+            </svg>
+
+            <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 12a8.5 8.5 0 01-8.5 8.5c-1.4 0-2.7-.3-3.8-.9L3 21l1.4-5.1A8.5 8.5 0 1121 12z" stroke-width="2"/>
+            </svg>
+
+            <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M22 2L11 13" stroke-width="2"/>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke-width="2"/>
+            </svg>
+
+        </div>
+
+        <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 3H18V21L12 17L6 21V3Z" stroke-width="2"/>
+        </svg>
+
+    </div>
+
+    <div class="caption">
+
+        <p class="font-semibold mb-2">506 Likes</p>
+
+        <p>
+            Multi-slide educational carousel designed to increase reach and engagement.
+        </p>
+
+        <div class="mt-4">
+            <span class="tag">Carousel</span>
+            <span class="tag">Instagram</span>
+            <span class="tag">Marketing</span>
+        </div>
+
+    </div>
+
+    <div class="dots" id="dots"></div>
+
+</div>
+
+
+</section>
+
+<div class="lightbox" id="lightbox">
+
+<button class="close-btn" onclick="closeLightbox()">
+✕
+</button>
+
+<img id="lightboxImage">
+
+</div>
+
+<script>
+
+const track = document.getElementById("carouselTrack");
+const slides = document.querySelectorAll("#carouselTrack img");
+const dotsContainer = document.getElementById("dots");
+
+let currentSlide = 0;
+
+slides.forEach((_, index) => {
+
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+
+    if(index === 0){
+        dot.classList.add("active");
+    }
+
+    dotsContainer.appendChild(dot);
+
+});
+
+function updateCarousel(){
+
+    track.style.transform =
+    `translateX(-${currentSlide * 100}%)`;
+
+    document.getElementById("slideCounter")
+    .innerText =
+    `${currentSlide + 1}/${slides.length}`;
+
+    document.querySelectorAll(".dot")
+    .forEach((dot,index)=>{
+
+        dot.classList.toggle(
+            "active",
+            index===currentSlide
+        );
+
+    });
+
+}
+
+function nextSlide(){
+
+    if(currentSlide < slides.length - 1){
+
+        currentSlide++;
+        updateCarousel();
+
+    }
+
+}
+
+function prevSlide(){
+
+    if(currentSlide > 0){
+
+        currentSlide--;
+        updateCarousel();
+
+    }
+
+}
+
+renderDots();
+
+function openLightbox(src){
+
+document.getElementById("lightbox")
+.classList.add("active");
+
+document.getElementById("lightboxImage")
+.src=src;
+
+}
+
+function closeLightbox(){
+
+document.getElementById("lightbox")
+.classList.remove("active");
+
+}
+
+const body=document.body;
+
+document
+.getElementById("theme-toggle")
+.addEventListener("click",()=>{
+
+body.classList.toggle("light");
+body.classList.toggle("dark");
+
+});
+
+</script>
+
+</body>
+</html>

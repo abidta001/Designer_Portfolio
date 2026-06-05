@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+      rel="icon"
+      href="assets/Images/favicon.png"
+      sizes="any"
+      type="image/png"
+    />
+<title>Project Gallery | ABID T A</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+    background:#09090b;
+}
+
+.gallery-card{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all .8s ease;
+}
+
+.gallery-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.glass{
+    backdrop-filter: blur(15px);
+    transition: all .4s ease;
+}
+
+.dark .glass{
+    background: rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.light .glass{
+    background: rgba(255,255,255,.8);
+    border:1px solid rgba(0,0,0,.08);
+}
+
+.gallery-card img{
+    transition:.5s;
+}
+
+.gallery-card:hover img{
+    transform:scale(1.08);
+}
+
+.gallery-card:hover{
+    transform:translateY(-10px);
+}
+.color-dot{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 0 0 1px rgba(255,255,255,.05);
+    transition:.3s ease;
+    cursor:pointer;
+}
+
+.color-dot:hover{
+    transform:scale(1.15);
+}
+.gallery-card .p-6{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.palette{
+    margin-top:auto;
+    padding-top:16px;
+}
+body.light{
+    background:#ffffff;
+    color:#18181b;
+}
+
+body.light .glass{
+    background:rgba(255,255,255,.8);
+    border:1px solid rgba(0,0,0,.08);
+}
+
+body.light p{
+    color:#52525b;
+}
+
+body.light .color-dot{
+    border:1px solid rgba(0,0,0,.1);
+}
+
+body.light #theme-toggle{
+    background:#ffffff;
+    color:#18181b;
+    border:1px solid #e4e4e7;
+}
+
+body.dark #theme-toggle{
+    background:#18181b;
+    color:white;
+}
+</style>
+
+</head>
+
+<body class="dark bg-zinc-950 text-white transition-colors duration-500">
+    <button
+id="theme-toggle"
+class="fixed top-6 right-6 z-50 p-3 rounded-full bg-zinc-800 text-white shadow-lg hover:scale-110 transition"
+>
+    <svg
+    id="theme-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-6 h-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor">
+
+        <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364 6.364l.707.707M5.636 5.636l-.707-.707m12.728 0l-.707.707M5.636 18.364l-.707.707M12 7a5 5 0 100 10 5 5 0 000-10z"/>
+
+    </svg>
+</button>
+
+<!-- Header -->
+
+<section class="py-20 text-center px-6">
+
+<h1 id="galleryTitle"
+class="text-5xl font-bold mb-4">
+LOGO DESIGN GALLERY
+</h1>
+
+<p class="text-zinc-400 max-w-2xl mx-auto">
+A curated collection of logo design projects showcasinga range of styles, concepts and industries. Each logo
+represents a unique brand identity crafted withcreativity and strategic thinking to effectively communicate
+the essence of the business it represents.
+</p>
+
+</section>
+
+<!-- Gallery -->
+
+<section class="max-w-7xl mx-auto px-6 pb-20">
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Project 1 -->
+
+<div class="gallery-card glass rounded-3xl overflow-hidden flex flex-col h-full">
+
+<img
+src="assets/Images/Logo/Zylora Beauty-01.png"
+class="w-full h-72 object-contain">
+
+<div class="p-6 flex flex-col flex-1">
+
+<h3 class="text-2xl font-semibold mb-2">
+Zylora Beauty – Handcrafted Logo Design
+</h3>
+
+<p class="text-zinc-400">
+Designed from a hand-drawn concept and refined into a professional vector logo using Adobe Illustrator, representing elegance, beauty, and sophistication.
+</p>
+<!-- Color Palette -->
+<div class="palette flex items-center gap-3">
+    <span class="text-xs uppercase tracking-wider text-zinc-500">
+        Colors
+    </span>
+
+    <div class="color-dot" style="background:#050505"></div>
+    <div class="color-dot" style="background:#f170aa"></div>
+</div>
+
+</div>
+
+</div>
+
+<!-- Project 2 -->
+
+<div class="gallery-card glass rounded-3xl overflow-hidden flex flex-col h-full">
+
+<img
+src="assets/Images/Logo/sumeru lgo.png"
+class="w-full h-72 object-contain">
+
+<div class="p-6 flex flex-col flex-1">
+
+<h3 class="text-2xl font-semibold mb-2">
+Sumeru Global Solutions – Vector Recreation
+</h3>
+
+<p class="text-zinc-400">
+A clean vector recreation of the company's logo, carefully traced and refined in Adobe Illustrator while preserving brand consistency and visual impact
+</p>
+<div class="palette flex items-center gap-3">
+    <span class="text-xs uppercase tracking-wider text-zinc-500">
+        Colors
+    </span>
+
+    <div class="color-dot" style="background:#ec6323"></div>
+    <div class="color-dot" style="background:#ef6e16"></div>
+    <div class="color-dot" style="background:#f49b22"></div>
+</div>
+
+</div>
+
+</div>
+
+<!-- Project 3 -->
+
+<div class="gallery-card glass rounded-3xl overflow-hidden flex flex-col h-full">
+
+<img
+src="assets/Images/Logo/Kudumbasree logo.png"
+class="w-full h-72 object-contain">
+
+<div class="p-6 flex flex-col flex-1">
+
+<h3 class="text-2xl font-semibold mb-2">
+Kudumbashree – Logo Recreation
+</h3>
+
+<p class="text-zinc-400">
+A vector-based recreation of the Kudumbashree logo, focusing on precision, scalability, and maintaining the original brand identity.
+</p>
+<div class="palette flex items-center gap-3">
+    <span class="text-xs uppercase tracking-wider text-zinc-500">
+        Colors
+    </span>
+
+    <div class="color-dot" style="background:#a02275"></div>
+    <div class="color-dot" style="background:#79b642"></div>
+    <div class="color-dot" style="background:#050505"></div>
+</div>
+
+</div>
+
+</div>
+
+<!-- Project 4 -->
+
+<div class="gallery-card glass rounded-3xl overflow-hidden flex flex-col h-full">
+
+<img
+src="assets/Images/Logo/DDU_GKY.png"
+class="w-full h-72 object-contain">
+
+<div class="p-6 flex flex-col flex-1">
+
+<h3 class="text-2xl font-semibold mb-2">
+DDU-GKY – Brand Logo Recreation
+</h3>
+
+<p class="text-zinc-400">
+Digitally recreated using Adobe Illustrator with attention to detail, ensuring a sharp and scalable version of the official program logo.
+</p>
+<div class="palette flex items-center gap-3">
+    <span class="text-xs uppercase tracking-wider text-zinc-500">
+        Colors
+    </span>
+
+    <div class="color-dot" style="background:#50388c"></div>
+    <div class="color-dot" style="background:#9b9da0"></div>
+    <div class="color-dot" style="background:#dcddde"></div>
+</div>
+
+</div>
+
+</div>
+
+<!-- Project 5 -->
+
+<div class="gallery-card glass rounded-3xl overflow-hidden flex flex-col h-full">
+
+<img
+src="assets/Images/Logo/DEER-01.png"
+class="w-full h-72 object-contain">
+
+<div class="p-6 flex flex-col flex-1">
+
+<h3 class="text-2xl font-semibold mb-2">
+Krest – Sports Brand Logo Design
+</h3>
+
+<p class="text-zinc-400">
+A bold and modern logo concept featuring a deer silhouette, designed to convey strength, performance, and premium brand identity.
+</p>
+<div class="palette flex items-center gap-3">
+    <span class="text-xs uppercase tracking-wider text-zinc-500">
+        Colors
+    </span>
+
+    <div class="color-dot" style="background:#050505"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Project 6 -->
+
+<div class="gallery-card glass rounded-3xl overflow-hidden flex flex-col h-full">
+
+<img
+src="assets/Images/Logo/Capcut.png"
+class="w-full h-72 object-contain">
+
+<div class="p-6 flex flex-col flex-1">
+
+<h3 class="text-2xl font-semibold mb-2">
+CapCut Inspired Logo Concept
+</h3>
+
+<p class="text-zinc-400">
+A self-created logo concept developed in Adobe Illustrator, combining modern iconography and bold typography to create a distinctive visual identity for a video editing brand.
+</p>
+<div class="palette flex items-center gap-3">
+    <span class="text-xs uppercase tracking-wider text-zinc-500">
+        Colors
+    </span>
+
+    <div class="color-dot" style="background:#050505"></div>
+   
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+  
+
+const body = document.body;
+const toggle = document.getElementById("theme-toggle");
+const icon = document.getElementById("theme-icon");
+
+let theme =
+localStorage.getItem("theme") || "dark";
+
+setTheme(theme);
+
+toggle.addEventListener("click",()=>{
+
+    theme =
+    body.classList.contains("dark")
+    ? "light"
+    : "dark";
+
+    setTheme(theme);
+
+});
+
+function setTheme(mode){
+
+    body.classList.remove("dark","light");
+    body.classList.add(mode);
+
+    localStorage.setItem("theme",mode);
+
+    if(mode === "light"){
+
+    body.classList.remove(
+        "bg-zinc-950",
+        "text-white"
+    );
+
+    body.classList.add(
+        "bg-white",
+        "text-zinc-900"
+    );
+
+}else{
+
+    body.classList.remove(
+        "bg-white",
+        "text-zinc-900"
+    );
+
+    body.classList.add(
+        "bg-zinc-950",
+        "text-white"
+    );
+
+}
+
+}
+
+
+// Scroll Animation
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+},{
+    threshold:0.15
+});
+
+document.querySelectorAll('.gallery-card')
+.forEach(card=>{
+    observer.observe(card);
+});
+
+// Category Title
+
+const params = new URLSearchParams(window.location.search);
+
+const category = params.get("category");
+
+if(category){
+
+const title = category
+.replace(/-/g,' ')
+.replace(/\b\w/g,l=>l.toUpperCase());
+
+document.getElementById('galleryTitle').textContent =
+title + " Gallery";
+
+}
+
+
+</script>
+
+</body>
+</html>

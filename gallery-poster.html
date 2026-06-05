@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Project Gallery | ABID T A</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+    background:#09090b;
+}
+.gallery-card .preview-overlay{
+    transition: all .3s ease;
+}
+.gallery-card{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+.gallery-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.gallery-card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.35),
+        0 0 0 1px rgba(255,255,255,.05);
+}
+
+.gallery-card:hover img{
+    transform:scale(1.03);
+}
+
+
+
+
+.glass{
+    backdrop-filter: blur(15px);
+    transition: all .4s ease;
+}
+
+.dark .glass{
+    background: rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.light .glass{
+    background: rgba(255,255,255,.8);
+    border:1px solid rgba(0,0,0,.08);
+}
+
+.gallery-card img{
+    transition:.5s;
+}
+
+
+
+
+</style>
+
+</head>
+
+<body class="bg-zinc-950 text-white transition-colors duration-500">
+    <button
+  id="theme-toggle"
+  class="fixed top-6 right-6 z-50 p-3 rounded-full glass hover:scale-110 transition"
+>
+  <svg
+    id="theme-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-6 h-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364 6.364l.707.707M5.636 5.636l-.707-.707m12.728 0l-.707.707M5.636 18.364l-.707.707M12 7a5 5 0 100 10 5 5 0 000-10z"
+    />
+  </svg>
+</button>
+
+<!-- Header -->
+
+<section class="py-20 text-center px-6">
+
+<h1 id="galleryTitle"
+class="text-5xl font-bold mb-4">
+Poster Design Gallery
+</h1>
+
+<p class="text-zinc-400 max-w-2xl mx-auto">
+A curated collection of poster design projects showcasing a range of styles, concepts and industries. Each poster represents a unique visual identity crafted with creativity and strategic thinking to effectively communicate the essence of the business it represents.
+</p>
+
+</section>
+
+<!-- Pinterest Style Poster Gallery -->
+
+<section class="max-w-7xl mx-auto px-6 pb-20">
+
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-6">
+
+       <div class="gallery-card group glass rounded-2xl overflow-hidden p-2 mb-6 break-inside-avoid relative">
+            <img src="assets/Images/Posters/LABOUR DAY.jpg"
+     alt="Poster"
+     class="w-full rounded-xl cursor-pointer"
+     onclick="openLightbox(0)">
+     <div class="preview-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center pointer-events-none">
+
+        <div class="px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+            <span class="text-white font-medium">
+                Click to Preview
+            </span>
+        </div>
+
+    </div>
+        </div>
+
+        <div class="gallery-card group glass rounded-2xl overflow-hidden p-2 mb-6 break-inside-avoid relative">
+            <img src="assets/Images/Posters/Spiderman Poster.jpg"
+                 alt="Poster"
+                 class="w-full rounded-xl cursor-pointer"
+                 onclick="openLightbox(1)">
+                 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center pointer-events-none">
+
+        <div class="px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+            <span class="text-white font-medium tracking-wide">
+                Click to Preview
+            </span>
+        </div>
+
+    </div>
+        </div>
+
+        <div class="gallery-card group glass rounded-2xl overflow-hidden p-2 mb-6 break-inside-avoid relative">
+            <img src="assets/Images/Posters/Red cross.jpg"
+                 alt="Poster"
+                 class="w-full rounded-xl cursor-pointer"
+                 onclick="openLightbox(2)">
+                 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center pointer-events-none">
+
+        <div class="px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+            <span class="text-white font-medium tracking-wide">
+                Click to Preview
+            </span>
+        </div>
+
+    </div>
+        </div>
+
+        <div class="gallery-card group glass rounded-2xl overflow-hidden p-2 mb-6 break-inside-avoid relative">
+            <img src="assets/Images/Posters/DDU- Poster.jpg"
+                 alt="Poster"
+                 class="w-full rounded-xl cursor-pointer"
+                 onclick="openLightbox(3)">
+                 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center pointer-events-none">
+
+        <div class="px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+            <span class="text-white font-medium tracking-wide">
+                Click to Preview
+            </span>
+        </div>
+
+    </div>
+        </div>
+
+        <div class="gallery-card group glass rounded-2xl overflow-hidden p-2 mb-6 break-inside-avoid relative">
+            <img src="assets/Images/Posters/Nurses day.jpg"
+                 alt="Poster"
+                 class="w-full rounded-xl cursor-pointer"
+                 onclick="openLightbox(4)">
+                 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center pointer-events-none">
+
+        <div class="px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+            <span class="text-white font-medium tracking-wide">
+                Click to Preview
+            </span>
+        </div>
+
+    </div>
+        </div>
+
+        <div class="gallery-card group glass rounded-2xl overflow-hidden p-2 mb-6 break-inside-avoid relative">
+            <img src="assets/Images/Posters/Glossy Clipping mask.jpg"
+                 alt="Poster"
+                 class="w-full rounded-xl cursor-pointer"
+                 onclick="openLightbox(5)">
+                 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center pointer-events-none">
+
+        <div class="px-5 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+            <span class="text-white font-medium tracking-wide">
+                Click to Preview
+            </span>
+        </div>
+
+    </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+    const body = document.body;
+const toggle = document.getElementById('theme-toggle');
+
+let theme = localStorage.getItem('theme') || 'dark';
+
+setTheme(theme);
+
+toggle.addEventListener('click', () => {
+  theme = body.classList.contains('dark')
+    ? 'light'
+    : 'dark';
+
+  setTheme(theme);
+});
+
+function setTheme(mode){
+
+  body.classList.remove('dark','light');
+  body.classList.add(mode);
+
+  if(mode === 'light'){
+      body.classList.remove('bg-zinc-950','text-white');
+      body.classList.add('bg-white','text-zinc-900');
+  }else{
+      body.classList.remove('bg-white','text-zinc-900');
+      body.classList.add('bg-zinc-950','text-white');
+  }
+
+  localStorage.setItem('theme', mode);
+}
+
+
+// Scroll Animation
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+},{
+    threshold:0.15
+});
+
+document.querySelectorAll('.gallery-card')
+.forEach(card=>{
+    observer.observe(card);
+});
+
+// Category Title
+
+const params = new URLSearchParams(window.location.search);
+
+const category = params.get("category");
+
+if(category){
+
+const title = category
+.replace(/-/g,' ')
+.replace(/\b\w/g,l=>l.toUpperCase());
+
+document.getElementById('galleryTitle').textContent =
+title + " Gallery";
+
+}
+
+
+const posters = [
+    "assets/Images/Posters/LABOUR DAY.jpg",
+    "assets/Images/Posters/Spiderman Poster.jpg",
+    "assets/Images/Posters/Red cross.jpg",
+    "assets/Images/Posters/DDU- Poster.jpg",
+    "assets/Images/Posters/Nurses day.jpg",
+    "assets/Images/Posters/Glossy Clipping mask.jpg"
+];
+
+let currentImage = 0;
+
+function openLightbox(index){
+    currentImage = index;
+
+    document.getElementById("lightboxImg").src =
+        posters[currentImage];
+
+    document.getElementById("lightbox")
+        .classList.remove("hidden");
+}
+
+function closeLightbox(){
+    document.getElementById("lightbox")
+        .classList.add("hidden");
+}
+
+function nextImage(){
+    currentImage =
+        (currentImage + 1) % posters.length;
+
+    document.getElementById("lightboxImg").src =
+        posters[currentImage];
+}
+
+function prevImage(){
+    currentImage =
+        (currentImage - 1 + posters.length) % posters.length;
+
+    document.getElementById("lightboxImg").src =
+        posters[currentImage];
+}
+document.addEventListener("keydown", (e) => {
+
+    if(document.getElementById("lightbox")
+       .classList.contains("hidden")) return;
+
+    if(e.key === "ArrowRight") nextImage();
+
+    if(e.key === "ArrowLeft") prevImage();
+
+    if(e.key === "Escape") closeLightbox();
+});
+</script>
+<div id="lightbox"
+     class="fixed inset-0 bg-black/95 hidden z-[9999] flex items-center justify-center">
+
+    <!-- Close -->
+    <button onclick="closeLightbox()"
+            class="absolute top-6 right-8 text-white text-5xl">
+        &times;
+    </button>
+
+    <!-- Previous -->
+    <button onclick="prevImage()"
+            class="absolute left-6 text-white text-5xl">
+        &#10094;
+    </button>
+
+    <!-- Image -->
+    <img id="lightboxImg"
+         class="max-w-[90%] max-h-[90vh] object-contain rounded-xl">
+
+    <!-- Next -->
+    <button onclick="nextImage()"
+            class="absolute right-6 text-white text-5xl">
+        &#10095;
+    </button>
+
+</div>
+</body>
+</html>
