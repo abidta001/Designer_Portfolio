@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AHAM Branding Showcase</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#09090b;
+color:white;
+overflow-x:hidden;
+}
+
+section{
+padding:120px 8%;
+}
+
+h1,h2{
+font-weight:700;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-direction:column;
+}
+
+.hero-logo{
+width:260px;
+margin-bottom:30px;
+filter:drop-shadow(0 0 30px rgba(244,180,0,.25));
+}
+
+.hero h1{
+font-size:5rem;
+}
+
+.hero p{
+color:#a1a1aa;
+margin-top:20px;
+font-size:1.1rem;
+}
+
+/* SECTION */
+
+.section-title{
+font-size:3rem;
+margin-bottom:60px;
+text-align:center;
+}
+
+.showcase{
+max-width:1200px;
+margin:auto;
+}
+
+/* GLASS CARD */
+
+.glass{
+background:#18181b;
+border:1px solid rgba(255,255,255,.05);
+border-radius:28px;
+padding:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+/* LOGO */
+
+.logo-showcase{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:450px;
+}
+
+.logo-showcase img{
+width:280px;
+transition:.5s;
+}
+
+.logo-showcase img:hover{
+transform:scale(1.08);
+}
+
+/* BUSINESS CARD */
+
+.business-card{
+width:500px;
+height:300px;
+margin:auto;
+perspective:1500px;
+cursor:pointer;
+}
+
+.business-inner{
+position:relative;
+width:100%;
+height:100%;
+transform-style:preserve-3d;
+transition:1s;
+}
+
+.business-card.flip .business-inner{
+transform:rotateY(180deg);
+}
+
+.business-front,
+.business-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+border-radius:20px;
+overflow:hidden;
+}
+
+.business-back{
+transform:rotateY(180deg);
+}
+
+/* LETTERHEAD */
+
+.letterhead{
+max-width:700px;
+margin:auto;
+transition:.4s;
+}
+
+.letterhead:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+/* ENVELOPE */
+/* ENVELOPE */
+
+.envelope-card{
+    width:min(1000px,95vw);
+    height:550px;
+    margin:auto;
+    perspective:1800px;
+    cursor:pointer;
+}
+
+.envelope-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:1s;
+}
+
+.envelope-card.flip .envelope-inner{
+    transform:rotateY(180deg);
+}
+
+.envelope-front,
+.envelope-back{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    border-radius:24px;
+    overflow:hidden;
+    background:#18181b;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.envelope-front img,
+.envelope-back img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+}
+
+.envelope-back{
+    transform:rotateY(180deg);
+}
+
+@media(max-width:768px){
+
+    .envelope-card{
+        width:100%;
+        height:320px;
+    }
+
+}
+/* BROCHURE */
+
+.tabs{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:40px;
+}
+
+.tab{
+padding:12px 28px;
+background:#18181b;
+border-radius:50px;
+cursor:pointer;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.tab.active{
+background:#f4b400;
+color:black;
+font-weight:600;
+}
+
+.brochure-view{
+max-width:1100px;
+margin:auto;
+}
+
+.brochure-view img{
+border-radius:20px;
+display:none;
+}
+
+.brochure-view img.active{
+display:block;
+animation:fade .5s;
+}
+.flip-note{
+    text-align:center;
+    margin-bottom:25px;
+    color:#f4b400;
+    font-size:0.95rem;
+    font-weight:500;
+    letter-spacing:.5px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        opacity:.5;
+        transform:translateY(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:translateY(-4px);
+    }
+
+    100%{
+        opacity:.5;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+padding:100px 20px;
+color:#a1a1aa;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.business-card{
+width:100%;
+height:220px;
+}
+
+
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<img src="assets/Images/Branding/Logo.png" class="hero-logo">
+
+
+</section>
+
+
+<!-- BUSINESS CARD -->
+
+<section>
+
+<h2 class="section-title">
+Business Card
+</h2>
+<div class="flip-note">
+    Click to Flip ↻
+</div>
+<div class="business-card"
+onclick="this.classList.toggle('flip')">
+
+<div class="business-inner">
+
+<div class="business-front">
+
+<img src="assets/Images/Branding/Visitingcard1.jpg">
+
+</div>
+
+<div class="business-back">
+
+<img src="assets/Images/Branding/Visitingcard2.jpg">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LETTERHEAD -->
+
+<section>
+
+<h2 class="section-title">
+Letterhead
+</h2>
+
+<div class="showcase">
+
+<img
+src="assets/Images/Branding/LetterHead.jpg"
+class="letterhead glass">
+
+</div>
+
+</section>
+
+<!-- ENVELOPE -->
+
+ <section>
+
+    <h2 class="section-title">
+        Envelope Design
+    </h2>
+
+    <div class="flip-note">
+        Front Side • Click to View Back Side
+    </div>
+
+    <div class="envelope-card"
+         onclick="this.classList.toggle('flip')">
+
+        <div class="envelope-inner">
+
+            <!-- FRONT -->
+
+            <div class="envelope-front">
+
+                <img
+                src="assets/Images/Branding/Envelope-06.jpg"
+                alt="Envelope Front">
+
+            </div>
+
+            <!-- BACK -->
+
+            <div class="envelope-back">
+
+                <img
+                src="assets/Images/Branding/back.jpg"
+                alt="Envelope Back">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BROCHURE -->
+
+<section>
+
+<h2 class="section-title">
+Trifold Brochure
+</h2>
+
+<div class="tabs">
+
+<div class="tab active"
+onclick="showBrochure('outside',this)">
+Outside
+</div>
+
+<div class="tab"
+onclick="showBrochure('inside',this)">
+Inside
+</div>
+
+</div>
+
+<div class="brochure-view">
+
+<img
+id="outside"
+class="active glass"
+src="assets/Images/Branding/Brochure1.jpg">
+
+<img
+id="inside"
+class="glass"
+src="assets/Images/Branding/Brochure2.jpg">
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<section class="footer">
+
+<h2>Complete Brand Identity Package</h2>
+
+<p>
+Logo • Business Card • Letterhead • Envelope • Trifold Brochure
+</p>
+
+</section>
+
+<script>
+
+function showBrochure(id,element){
+
+document
+.querySelectorAll('.brochure-view img')
+.forEach(img=>{
+
+img.classList.remove('active');
+
+});
+
+document
+.getElementById(id)
+.classList.add('active');
+
+document
+.querySelectorAll('.tab')
+.forEach(tab=>{
+
+tab.classList.remove('active');
+
+});
+
+element.classList.add('active');
+
+}
+
+</script>
+
+</body>
+</html>
