@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AHAM | Web Design & Development</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+body{
+background:#09090b;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+min-height:60vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+color:#a1a1aa;
+line-height:1.8;
+font-size:1.1rem;
+}
+
+.projects{
+padding:80px 8%;
+}
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+gap:40px;
+max-width:1400px;
+margin:auto;
+}
+
+.project-card{
+background:#18181b;
+border-radius:24px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.06);
+transition:.4s;
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.browser{
+overflow:hidden;
+}
+
+.browser-top{
+height:48px;
+background:#27272a;
+display:flex;
+align-items:center;
+padding:0 16px;
+gap:8px;
+}
+
+.browser-top span{
+width:12px;
+height:12px;
+border-radius:50%;
+background:#52525b;
+}
+
+.browser-url{
+margin-left:12px;
+font-size:.8rem;
+color:#a1a1aa;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+}
+
+.browser img{
+width:100%;
+height:260px;
+object-fit:cover;
+display:block;
+}
+
+.project-content{
+padding:24px;
+}
+
+.project-content h3{
+font-size:1.4rem;
+margin-bottom:15px;
+}
+
+.project-content p{
+color:#a1a1aa;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.tech-stack{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:25px;
+}
+
+.tech-stack span{
+padding:8px 14px;
+border-radius:999px;
+background:#27272a;
+font-size:.85rem;
+}
+
+.project-links{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:12px 22px;
+border-radius:999px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:#f4b400;
+color:black;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+background:#27272a;
+color:white;
+}
+
+.btn-secondary:hover{
+transform:translateY(-3px);
+}
+
+.footer{
+padding:80px 20px;
+text-align:center;
+color:#71717a;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.projects-grid{
+grid-template-columns:1fr;
+}
+
+.browser img{
+height:220px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+<h1>Web Design & Development</h1>
+
+<p>
+A collection of websites I designed and developed,
+focusing on clean UI, responsiveness, performance,
+and user experience.
+</p>
+
+</section>
+
+<section class="projects">
+
+<div class="projects-grid">
+
+<!-- PROJECT 1 -->
+
+<div class="project-card">
+
+<div class="browser">
+
+<div class="browser-top">
+
+<span></span>
+<span></span>
+<span></span>
+
+<div class="browser-url">
+www.project1.com
+</div>
+
+</div>
+
+<img
+src="assets/Images/web_design/carewings_travels.png"
+alt="Project 1">
+
+</div>
+
+<div class="project-content">
+
+<h3>Agency Website</h3>
+
+<p>
+Modern responsive business website developed for a
+creative agency with a focus on branding and lead generation.
+</p>
+
+<div class="tech-stack">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+
+</div>
+
+<div class="project-links">
+
+<a href="https://carewingstravels.com"
+target="_blank"
+class="btn btn-primary">
+
+Live Website →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PROJECT 2 -->
+
+<div class="project-card">
+
+<div class="browser">
+
+<div class="browser-top">
+
+<span></span>
+<span></span>
+<span></span>
+
+<div class="browser-url">
+www.project2.com
+</div>
+
+</div>
+
+<img
+src="assets/Images/web_design/Rbs_foundation.png"
+alt="Project 2">
+
+</div>
+
+<div class="project-content">
+
+<h3>Portfolio Website</h3>
+
+<p>
+Personal portfolio website designed to showcase
+creative work and development projects.
+</p>
+
+<div class="tech-stack">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>Responsive</span>
+
+</div>
+
+<div class="project-links">
+
+<a href="https://rbsfoundation.co.in"
+target="_blank"
+class="btn btn-primary">
+
+Live Website →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PROJECT 3 -->
+
+<div class="project-card">
+
+<div class="browser">
+
+<div class="browser-top">
+
+<span></span>
+<span></span>
+<span></span>
+
+<div class="browser-url">
+www.project3.com
+</div>
+
+</div>
+
+<img
+src="assets/Images/web_design/Truimph_clone.png"
+alt="Project 3">
+
+</div>
+
+<div class="project-content">
+
+<h3>Business Landing Page</h3>
+
+<p>
+Landing page built for marketing campaigns,
+optimized for conversions and mobile experience.
+</p>
+
+<div class="tech-stack">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+
+</div>
+
+<div class="project-links">
+
+<a href="https://abidta001.github.io/Truimph-Motorcycles_Clone/"
+target="_blank"
+class="btn btn-primary">
+
+Live Website →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PROJECT 4 -->
+
+<div class="project-card">
+
+<div class="browser">
+
+<div class="browser-top">
+
+<span></span>
+<span></span>
+<span></span>
+
+<div class="browser-url">
+www.project4.com
+</div>
+
+</div>
+
+<img
+src="assets/Images/web_design/Uber_clone.png"
+alt="Project 4">
+
+</div>
+
+<div class="project-content">
+
+<h3>Corporate Website</h3>
+
+<p>
+Professional company website featuring service pages,
+contact forms and responsive layouts.
+</p>
+
+<div class="tech-stack">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>UI Design</span>
+
+</div>
+
+<div class="project-links">
+
+<a href="https://abidta001.github.io/UberClone_Responsive/"
+target="_blank"
+class="btn btn-primary">
+
+Live Website →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="footer">
+
+<h2>More Projects Coming Soon</h2>
+
+<p>
+Designed & Developed by AHAM
+</p>
+
+</section>
+
+</body>
+</html>
