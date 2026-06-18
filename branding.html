@@ -208,6 +208,48 @@ transition:.4s;
 transform:translateY(-10px) scale(1.02);
 }
 
+
+/* ID CARD */
+
+.idcard-showcase{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.idcard-item{
+    width:300px;
+    padding:15px;
+    border-radius:24px;
+    transition:.4s;
+}
+
+.idcard-item:hover{
+    transform:translateY(-10px);
+}
+
+.idcard-item img{
+    width:100%;
+    display:block;
+    border-radius:16px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .idcard-showcase{
+        gap:20px;
+    }
+
+    .idcard-item{
+        width:260px;
+    }
+
+}
 /* ENVELOPE */
 /* ENVELOPE */
 
@@ -424,6 +466,31 @@ onclick="this.classList.toggle('flip')">
 </div>
 
 </section>
+<!-- ID CARD -->
+
+<section>
+
+    <h2 class="section-title">
+        Employee ID Card
+    </h2>
+
+    <div class="idcard-showcase">
+
+        <div class="idcard-item glass">
+            <img
+            src="assets/Images/Branding/ID_Card-01.jpg"
+            alt="ID Card Front">
+        </div>
+
+        <div class="idcard-item glass">
+            <img
+            src="assets/Images/Branding/ID_Card-02.jpg"
+            alt="ID Card Back">
+        </div>
+
+    </div>
+
+</section>
 
 <!-- LETTERHEAD -->
 
@@ -485,6 +552,7 @@ class="letterhead glass">
     </div>
 
 </section>
+
 
 <!-- BROCHURE -->
 
