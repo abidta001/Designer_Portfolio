@@ -19,8 +19,8 @@ body{
 }
 
 .gallery-card{
-    opacity:0;
-    transform:translateY(60px);
+    opacity:1;
+    transform:none;
     transition:all .8s ease;
 }
 
@@ -152,10 +152,154 @@ the essence of the business it represents.
 <!-- Gallery -->
 
 <section class="max-w-7xl mx-auto px-6 pb-20">
+  <!-- Brand Identity Explorations -->
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<section class="max-w-7xl mx-auto px-6 pb-20">
 
-<!-- Project 1 -->
+    
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- BISON -->
+
+        <div class="glass rounded-3xl overflow-hidden">
+
+            <div class="bg-white p-3">
+                <img
+                src="assets/Images/Logo/Bison_1.jpg"
+                class="w-full h-72 object-contain">
+            </div>
+
+            <div class="border-t border-white/10"></div>
+
+            <div class="bg-zinc-900 p-2">
+                <img
+                src="assets/Images/Logo/Bison_2.jpg"
+                class="w-full h-40 object-contain">
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="text-xl font-semibold mb-2">
+                    BISON
+                </h3>
+
+                <p class="text-zinc-400 mb-5">
+                    A bold identity concept explored through multiple color systems to demonstrate versatility across different branding directions.
+                </p>
+
+                <div class="palette flex items-center gap-3 flex-wrap">
+                    <span class="text-xs uppercase tracking-wider text-zinc-500">
+                        Colors
+                    </span>
+
+                    <div class="color-dot" style="background:#191919"></div>
+                    <div class="color-dot" style="background:#1f150c"></div>
+                    <div class="color-dot" style="background:#412d15"></div>
+                    <div class="color-dot" style="background:#e1dcc9"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BIRD -->
+
+        <div class="glass rounded-3xl overflow-hidden">
+
+            <div class="bg-white p-3">
+                <img
+                src="assets/Images/Logo/Bird_1.jpg"
+                class="w-full h-72 object-contain">
+            </div>
+
+            <div class="border-t border-white/10"></div>
+
+            <div class="bg-zinc-900 p-2">
+                <img
+                src="assets/Images/Logo/Bird_2.jpg"
+                class="w-full h-40 object-contain">
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="text-xl font-semibold mb-2">
+                    Falcon
+                </h3>
+
+                <p class="text-zinc-400 mb-5">
+                    A modern bird-inspired identity tested across multiple palettes to evaluate brand tone and visual impact.
+                </p>
+
+                <div class="palette flex items-center gap-3 flex-wrap">
+                    <span class="text-xs uppercase tracking-wider text-zinc-500">
+                        Colors
+                    </span>
+
+                    <div class="color-dot" style="background:#091413"></div>
+                    <div class="color-dot" style="background:#285a48"></div>
+                    <div class="color-dot" style="background:#408a71"></div>
+                    <div class="color-dot" style="background:#b0e4cc"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DEER -->
+
+        <div class="glass rounded-3xl overflow-hidden">
+
+            <div class="bg-white p-3">
+                <img
+                src="assets/Images/Logo/Deer_1.jpg"
+                class="w-full h-72 object-contain">
+            </div>
+
+            <div class="border-t border-white/10"></div>
+
+            <div class="bg-zinc-900 p-2">
+                <img
+                src="assets/Images/Logo/Deer_2.jpg"
+                class="w-full h-40 object-contain">
+            </div>
+
+            <div class="p-6">
+
+                <h3 class="text-xl font-semibold mb-2">
+                    Krest
+                </h3>
+
+                <p class="text-zinc-400 mb-5">
+                    A sports brand identity explored through multiple color directions to test energy, strength, and premium positioning.
+                </p>
+
+                <div class="palette flex items-center gap-3 flex-wrap">
+                    <span class="text-xs uppercase tracking-wider text-zinc-500">
+                        Colors
+                    </span>
+
+                    <div class="color-dot" style="background:#191919"></div>
+                    <div class="color-dot" style="background:#233d4d"></div>
+                    <div class="color-dot" style="background:#fe7f2d"></div>
+                    <div class="color-dot" style="background:#eaecf0"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Gallery -->
+
+<section class="max-w-7xl mx-auto px-6 pb-20">
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project 1 -->
 
 <div class="gallery-card glass rounded-3xl overflow-hidden flex flex-col h-full">
 
@@ -404,14 +548,25 @@ function setTheme(mode){
 
 // Scroll Animation
 
-const observer = new IntersectionObserver(entries=>{
+const observer = new IntersectionObserver(
+(entries)=>{
     entries.forEach(entry=>{
         if(entry.isIntersecting){
             entry.target.classList.add('show');
         }
     });
-},{
-    threshold:0.15
+},
+{
+    threshold:0.05
+}
+);
+
+document.querySelectorAll('.gallery-card').forEach(card=>{
+    observer.observe(card);
+});
+
+document.querySelectorAll('.gallery-card').forEach(card=>{
+    observer.observe(card);
 });
 
 document.querySelectorAll('.gallery-card')
